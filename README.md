@@ -5,8 +5,8 @@ for downstream processing and interactive querying.
 
 I collect one full day’s worth of stock HIGH and LOW prices for each company listed below on Thursday, May 14th 2020, at an one minute interval
 
-●	Facebook (FB)
-●	Shopify (SHOP)
+●#	Facebook (FB)
+●#	Shopify (SHOP)
 ●	Beyond Meat (BYND)
 ●	Netflix (NFLX)
 ●	Pinterest (PINS)
