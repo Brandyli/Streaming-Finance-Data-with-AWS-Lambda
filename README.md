@@ -24,6 +24,7 @@ S3 Content From DataTransformer
 CSV Output From Query in DataAnalyzer
 
 ### AWS Lambda configuration
+API endpoint: https://2niv3zq7j9.execute-api.us-east-1.amazonaws.com/default/Data-Collector
 <img width="1393" alt="Screen Shot 2020-05-15 at 10 04 16 PM" src="https://user-images.githubusercontent.com/46945617/82107763-2846b600-96f8-11ea-99a4-07a8e0cfc313.png">
 
 In order to run lambda functions that also manage dependencies, we must leverage a "deployment package", basically a zip file containing your lambda code and all the dependencies it needs all packaged into a single artifact.
