@@ -1,20 +1,20 @@
 # Streaming-Finance-Data-with-AWS-Lambda
 
-In this project, I provisioned two Lambda functions to generate near real time finance data records 
-for downstream processing and interactive querying. 
+For this project, you are tasked with provisioning a few Lambda functions to generate near real time finance data records for downstream processing and interactive querying.
 
-I collect one full day’s worth of stock HIGH and LOW prices for each company listed below on Thursday, May 14th 2020, at an one minute interval
+This project leads us through the process of consuming “real time” data, processing the data and then dumping it in a manner that facilitates querying and further analysis, either in real time or near real time capacity.
 
-● Facebook (FB)
-● Shopify (SHOP)
-●	Beyond Meat (BYND)
-●	Netflix (NFLX)
-●	Pinterest (PINS)
-●	Square (SQ)
-●	The Trade Desk (TTD)
-●	Okta (OKTA)
-●	Snap (SNAP)
-●	Datadog (DDOG)
+In doing so, we will familiarize ourselves with a process that one can leverage in their professional or personal endeavors that require consumption of data that is “always on” and changing very quickly, in sub hour (and typically) sub minute intervals.
+
+* Facebook (FB)
+*	Beyond Meat (BYND)
+*	Netflix (NFLX)
+*	Pinterest (PINS)
+*	Square (SQ)
+*	The Trade Desk (TTD)
+*	Okta (OKTA)
+*	Snap (SNAP)
+*	Datadog (DDOG)
 
 This repo includes:
 
