@@ -23,10 +23,32 @@ Lambda function file data_collector.py
 S3 Content From DataTransformer
 CSV Output From Query in DataAnalyzer
 
+#### Setting up our AWS Kinesis Data Firehose
+Start by going to the AWS homepage as per usual and type in “Kinesis”.
+Then, choose the __Data Firehose option.__(Firehose - “easiest way to reliably load streaming data into data lakes, data stores and analytics tools”.)
+For the next page, you only really need to __add a name for your delivery stream.__
+For the next page, you want to choose __“Enabled”__ for the Transform source records with AWS Lambda option. 
+In a new tab, navigate to the Lambda landing page and __create a new lambda function.__
+Note that you ought to choose __Python 3.8__ here.
+Click __Create Function__ and ensure you are on your new function landing page.
+To trigger this lambda off of a new record added to our Kinesis Firehose Delivery Stream. 
+```
+def lambda_handler(event, context):
+    output_records = []
+    for record in event["records"]:
+        output_records.append({
+            "recordId": record['recordId'],
+            "result": "Ok",
+            "data": record["data"]
+        })
+        
+    print(len(output_records))
+    return { "records": output_records }
+```
+before hitting Next, click on the AIM role button and pick the default option:
 ### AWS Lambda configuration
 DataCollector API endpoint: https://ayctpvzsp3.execute-api.us-east-1.amazonaws.com/default/DataCollector
 <img width="1393" alt="Screen Shot 2020-05-15 at 10 04 16 PM" src="https://user-images.githubusercontent.com/46945617/82107763-2846b600-96f8-11ea-99a4-07a8e0cfc313.png">
-
 What is AWS Kinesis?
 AWS Kinesis, a serverless streaming service provided by AWS, is hugely useful in managing “always on” data for near real time decision making and analysis. 
 
@@ -44,4 +66,3 @@ Final thoughts
 
 *	We created a __Delivery Stream__, a very powerful construct that allows us to collect real time data.
 *	Our Delivery Stream supports running an __AWS Lambda function__ to transform records before they are dropped into our distributed file system (in this case S3). This is powerful because we can “cast a wide net” but normalize all the various values that we accumulate from various sources.
-
